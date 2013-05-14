@@ -1,0 +1,37 @@
+Felix's minimal Emacs configs
+=============================
+
+To use it, just put this in your `.emacs` file:
+
+```
+(load-file "~/.emacs.d/init.el")
+```
+
+Dependencies
+------------
+
+Most of the dependency files are archinved in the `elpa` directory; however, if you need the list, here it is:
+
+* exec-path-from-shell
+* expand-region
+* smart-window
+* markdown-mode
+
+If you want to setup the ring-bell command to blink the caps-lock LED, compile the file [keyboard leds](http://osxbook.com/book/bonus/chapter10/kbdleds/) to your prefered path (I use `~/bin`.)
+
+Keybindings
+-----------
+
+* **both command** keys are `meta`
+* **left option** key is `command`
+* **right option** key is `control`
+* **left option key + tab** is `meta-tab`
+* **command + backquote** is jumping to another frame
+* **control + =** is expand region
+* **tab** triggers completions in emacs-lisp mode
+
+
+License
+-------
+
+The files in `elpa` has its own licenses; for other files (`init.el`, `keybindings.el`, and `configs.el`,) uses the [WTFPL](http://www.wtfpl.net/about/).

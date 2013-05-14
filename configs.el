@@ -1,0 +1,13 @@
+(global-visual-line-mode t)
+(tool-bar-mode -1)
+(setq inhibit-startup-message t)
+(show-paren-mode t)
+(setq-default indent-tabs-mode nil)
+
+(setq backup-directory-alist '(("." . "~/.backup_emacs"))
+  backup-by-copying t    ; Don't delink hardlinks
+  version-control t      ; Use version numbers on backups
+  delete-old-versions t  ; Automatically delete excess backups
+  kept-new-versions 20   ; how many of the newest versions to keep
+  kept-old-versions 5    ; and how many of the old
+)
