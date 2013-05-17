@@ -19,6 +19,26 @@ Most of the dependency files are archinved in the `elpa` directory; however, if 
 
 If you want to setup the ring-bell command to blink the caps-lock LED, compile the file [keyboard leds](http://osxbook.com/book/bonus/chapter10/kbdleds/) to your prefered path (I use `~/bin`.)
 
+### w3m ###
+
+```bash
+brew install w3m
+mkdir -p ~/.emacs.d/vendor
+cd ~/.emacs.d/vendor
+cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot login
+cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot co emacs-w3m
+
+cd emacs-w3m
+autoconf
+make
+```
+
+### pdf viewer ###
+
+```bash
+brew install ghostscript
+```
+
 Keybindings
 -----------
 
@@ -29,7 +49,8 @@ Keybindings
 * **command + backquote** is jumping to another frame
 * **control + =** is expand region
 * **tab** triggers completions in emacs-lisp mode
-
+* `C-h` is backspace
+* `C-x?` is help
 
 License
 -------

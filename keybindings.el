@@ -31,6 +31,10 @@
 ;; command-backquote is still jump to other frame
 (global-set-key (kbd "M-`") 'other-frame)
 
+;; remap C-h
+(global-set-key "\C-h" 'backward-delete-char)
+(global-set-key "\C-x?" 'help-command)
+
 ;; expand region
 (global-set-key (kbd "C-=") 'er/expand-region)
 
@@ -38,3 +42,13 @@
 (setq tab-always-indent 'complete)
 (add-to-list 'completion-styles 'initials t)
 (define-key global-map (kbd "RET") 'newline-and-indent)
+
+;; view docs
+(fset 'doc-prev "\C-xo\C-x[\C-xo")
+(fset 'doc-next "\C-xo\C-x]\C-xo")
+(global-set-key (kbd "M-[") 'doc-prev)
+(global-set-key (kbd "M-]") 'doc-next)
+
+
+;; defined in utils.el
+(global-set-key (kbd "M-'") 'toggle-comment-on-line)

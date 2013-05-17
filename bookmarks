@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("configs.el"
+(("PDF"
+ (filename . "~/Documents/PDF/")
+ (front-context-string . "Data_Mining_-_Pr")
+ (rear-context-string . "14 Oct 16  2010 ")
+ (position . 244))
+("configs.el"
  (filename . "~/.emacs.d/configs.el")
  (front-context-string . "(global-visual-l")
  (rear-context-string)
