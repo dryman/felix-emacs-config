@@ -19,6 +19,31 @@ Most of the dependency files are archinved in the `elpa` directory; however, if 
 
 If you want to setup the ring-bell command to blink the caps-lock LED, compile the file [keyboard leds](http://osxbook.com/book/bonus/chapter10/kbdleds/) to your prefered path (I use `~/bin`.)
 
+### Jabber ###
+
+First, install `gnutils`, make sure `gnutls-cli` is installed.
+
+```bash
+brew install gnutls
+```
+
+Download latest emacs-jabber from source [Emacs jabber beta](http://sourceforge.net/projects/emacs-jabber/files/emacs-jabber%20beta%20versions/).
+When I wrote this article, I was using version 0.8.92.
+
+Extract it to `~/.emacs.d/vendor/emacs-jabber/` directory.
+
+```bash
+cd ~/.emacs.d/vendor/emacs-jabber/
+./configure
+make
+```
+
+Put `(require 'jabber-autoloads)` in `init.el`. (Already done)
+
+`M-x jabber-customize` and setup your account of gtalk.
+
+Use `jabber-connect-all` to connect server.
+
 ### w3m ###
 
 ```bash

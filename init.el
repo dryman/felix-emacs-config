@@ -6,16 +6,16 @@
 
 ;; Load paths
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-w3m/")
+(add-to-list 'load-path "~/.emacs.d/vendor/emacs-jabber/")
 
 ;; Require
 (require 'cl)
 (require 'powerline)
 (require 'expand-region)
 (require 'smart-window)
-;; (require 'dired-single)
-;; (require 'dired-details)
 (require 'dired-details+)
 (require 'w3m-load)
+(require 'jabber-autoloads)
 
 (exec-path-from-shell-initialize)
 
