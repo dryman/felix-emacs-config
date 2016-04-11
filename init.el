@@ -1,12 +1,18 @@
 ;; Setup packages
 (require 'package)
-(add-to-list 'package-archives '("marmalade"."http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives '("melpa"."http://melpa.milkbox.net/packages/"))
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages")
+			 ("marmalade"."http://marmalade-repo.org/packages/")
+			 ("melpa"."http://melpa.org/packages/")))
 (package-initialize)
 
 ;; Load paths
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-w3m/")
 ;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-jabber/")
+(load
+ "/Users/felix/.opam/system/share/emacs/site-lisp/tuareg-site-file")
+(add-to-list 'load-path
+   "/Users/felix/.opam/system/share/emacs/site-lisp/")
+
 
 ;; Require
 (require 'cl-lib)
