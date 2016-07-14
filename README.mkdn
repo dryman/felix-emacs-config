@@ -16,68 +16,75 @@ Most of the dependency files are archinved in the `elpa` directory; however, if 
 * expand-region
 * smart-window
 * markdown-mode
-
-If you want to setup the ring-bell command to blink the caps-lock LED, compile the file [keyboard leds](http://osxbook.com/book/bonus/chapter10/kbdleds/) to your prefered path (I use `~/bin`.)
-
-### Jabber ###
-
-First, install `gnutils`, make sure `gnutls-cli` is installed.
-
-```bash
-brew install gnutls
-```
-
-Download latest emacs-jabber from source [Emacs jabber beta](http://sourceforge.net/projects/emacs-jabber/files/emacs-jabber%20beta%20versions/).
-When I wrote this article, I was using version 0.8.92.
-
-Extract it to `~/.emacs.d/vendor/emacs-jabber/` directory.
-
-```bash
-cd ~/.emacs.d/vendor/emacs-jabber/
-./configure
-make
-```
-
-Put `(require 'jabber-autoloads)` in `init.el`. (Already done)
-
-`M-x jabber-customize` and setup your account of gtalk.
-
-Use `jabber-connect-all` to connect server.
-
-### w3m ###
-
-```bash
-brew install w3m
-mkdir -p ~/.emacs.d/vendor
-cd ~/.emacs.d/vendor
-cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot login
-cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot co emacs-w3m
-
-cd emacs-w3m
-autoconf
-make
-```
-
-### pdf viewer ###
-
-```bash
-brew install ghostscript
-```
+* powerline
+* redo+
+* gnuplot
+* magit
 
 Keybindings
 -----------
 
-* **both command** keys are `meta`
-* **left option** key is `command`
-* **right option** key is `control`
-* **left option key + tab** is `meta-tab`
-* **command + backquote** is jumping to another frame
-* **control + =** is expand region
-* **tab** triggers completions in emacs-lisp mode
+* `control + =` is expand region
 * `C-h` is backspace
 * `C-x?` is help
+* `s-m` toggle menubar
+* `s-backtick` switch to other frame
+* `M-'` toggle comment on line
+* `M-;` toggle comment
+
+Smart window
+------------
+
+    M-x smart-window-move
+    M-x smart-window-buffer-split
+    M-x smart-window-file-split
+    M-x smart-window-rotate
+    
+    M-x sw-above
+    M-x sw-below
+    M-x sw-left
+    M-x sw-right
+
+    C-x w   => smart-window-move
+    C-x W   => smart-window-buffer-split
+    C-x M-w => smart-window-file-split
+    C-x R   => smart-window-rotate
+    C-x 2   => sw-below
+    C-x 3   => sw-right
+    
+Deprecated stuffs
+=================
+
+* jabber
+* w3m
+* haskell-mode
+* tuareg (ocaml)
+* projectile
+* capslock ring bell
+
+#### capslock ringbell
+Build  [keyboard leds](http://osxbook.com/book/bonus/chapter10/kbdleds/) and put it on your path.
+
+```
+(setq ring-bell-function
+      (lambda ()
+        (call-process-shell-command "keyboard_leds -c1; keyboard_leds -c0" nil 0 nil)))
+```
+
+I choose to remove it to remove build dependencies.
 
 License
 -------
 
-The files in `elpa` has its own licenses; for other files (`init.el`, `keybindings.el`, and `configs.el`,) uses the [WTFPL](http://www.wtfpl.net/about/).
+    This config is free software: you can redistribute it and/or modify it under
+    the terms of the GNU General Public License as published by the Free
+    Software Foundation, either version 3 of the License, or (at your option)
+    any later version.
+
+    This config is distributed in the hope that it will be useful, but WITHOUT
+    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+    more details.
+
+    You should have received a copy of the GNU General Public License along with
+    OPIC.  If not, see <http://www.gnu.org/licenses/>.
