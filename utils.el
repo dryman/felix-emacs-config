@@ -27,6 +27,8 @@ Return a list of installed packages or nil for every skipped package."
      (if (package-installed-p package)
          nil
        (if (y-or-n-p (format "Package %s is missing. Install it? " package))
-           (package-install package)
+           (progn
+             (package-refresh-contents)
+             (package-install package))
          package)))
    packages))
