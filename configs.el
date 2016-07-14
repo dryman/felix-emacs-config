@@ -14,6 +14,11 @@
   kept-old-versions 5    ; and how many of the old
 )
 
+;; mouse scroll
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+(setq mouse-wheel-progressive-speed nil)
+
+
 (powerline-default-theme)
 (custom-set-faces
  '(mode-line ((t (:foreground "#f9f9f9"
@@ -22,16 +27,3 @@
 
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
-
-;; (defadvice org-open-at-point (around org-open-at-point-choose-browser activate)
-;;   (let ((browse-url-browser-function
-;;          (cond ((equal (ad-get-arg 0) '(4))
-;;                 'browse-url-generic)
-;;                ((equal (ad-get-arg 0) '(16))
-;;                 'choose-browser)
-;;                (t
-;;                 (lambda (url &optional new)
-;;                   (w3m-browse-url url t)))
-;;                )))
-;;     ad-do-it))
-;; 
