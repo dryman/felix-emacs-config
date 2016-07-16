@@ -17,18 +17,12 @@
 (defun caps-bell
   (call-process-shell-command "keyboard_leds -c1; keyboard_leds -c0" nil 0 nil))
 
-;; http://stackoverflow.com/a/10095853
 (defun ensure-package-installed (&rest packages)
-  "Assure every package is installed, ask for installation if it’s not.
-Return a list of installed packages or nil for every skipped package."
+  "Download the package if it were not installed"
   (mapcar
    (lambda (package)
-     ;; (package-installed-p 'evil)
-     (if (package-installed-p package)
-         nil
-       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
-           (progn
-             (package-refresh-contents)
-             (package-install package))
-         package)))
+     (if (not (package-installed-p package))
+         (progn
+           (package-refresh-contents)
+           (package-install package))))
    packages))
