@@ -27,3 +27,10 @@
 
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
+
+;; orgmode gnuplot setups
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((gnuplot . t)))
+(setq org-startup-with-inline-images t)
+(add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images)
