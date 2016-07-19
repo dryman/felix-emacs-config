@@ -16,3 +16,5 @@
 
 ;; defined in utils.el
 (global-set-key (kbd "M-'") 'toggle-comment-on-line)
+
+(global-set-key "\M- " 'hippie-expand)

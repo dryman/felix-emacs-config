@@ -14,7 +14,8 @@
  'powerline
  'redo+
  'gnuplot
- 'magit)
+ 'magit
+ 'ox-twbs)
 
 ;; Require
 (require 'cl-lib)

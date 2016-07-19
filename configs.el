@@ -31,6 +31,12 @@
 ;; orgmode gnuplot setups
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((gnuplot . t)))
+ '((gnuplot . t)
+   (python . t)
+   (R . t)
+   (perl . t)))
 (setq org-startup-with-inline-images t)
+(setq org-pretty-entities t)
+(setq org-confirm-babel-evaluate nil)
 (add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images)
+(setq org-latex-create-formula-image-program 'dvipng)
