@@ -52,7 +52,28 @@ Smart window
     C-x R   => smart-window-rotate
     C-x 2   => sw-below
     C-x 3   => sw-right
-    
+
+Orgmode publish setup
+--------------------
+
+On my different desktop/laptop I store the org projects at different 
+directories, yet I don't want to maintain complicated 
+`org-publish-project-alist` separately. Hence I created a small utility to
+generate `org-publish-project-alist`. It takes a nested list as the argument,
+where the inner list specifies the project name, base directory, and optionally
+an output directory. If the output directory is not specified, by default it
+publishes to `base-dir/public_html`.
+
+```
+(setq org-publish-project-alist
+      (build-org-publish-alist
+       '((web-site "~/web-site" "/var/www/html")
+         (notes "~/org-projects/notes"))))
+```
+
+Using this setup, you can run the `org-publish` command with the project names
+`web-site` and `notes`.
+
 Deprecated stuffs
 =================
 
