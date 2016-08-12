@@ -26,3 +26,40 @@
            (package-refresh-contents)
            (package-install package))))
    packages))
+
+;; Usage
+;; (setq org-publish-project-alist
+;;       (build-org-publish-alist
+;;        '((notes "~/notes" "/var/www/html")
+;;          (org-math "~/org-math"))))
+(defun build-org-publish-alist (lst)
+  (apply
+   #'append
+   (mapcar
+    (lambda (lst)
+      (let* ((project-org (concat (symbol-name (car lst)) "-org-files"))
+             (project-assets (concat (symbol-name (car lst)) "-assets"))
+             (base-dir (cadr lst))
+             (publishing-dir
+              (if (caddr lst)
+                  (caddr lst)
+                (concat (file-name-as-directory base-dir)))))
+        (list
+         (list
+          project-org
+          :base-directory base-dir
+          :auto-sitemap t
+          :publishing-directory publishing-dir
+          :publishing-function 'org-html-publish-to-html)
+         (list
+          project-assets
+          :base-directory base-dir
+          :recursive
+          :exclude "public_html"
+          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+          :publishing-directory publishing-dir
+          :publishing-function 'org-publish-attachment)
+         (list (symbol-name (car lst))
+               :components
+               (list project-org project-assets)))))
+    lst)))
