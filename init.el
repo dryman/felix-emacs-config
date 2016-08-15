@@ -1,7 +1,8 @@
 ;; Setup packages
 
 (require 'package)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages")
+(setq package-archives '(("org" . "http://orgmode.org/elpa/")
+                         ("gnu" . "http://elpa.gnu.org/packages")
 			 ("marmalade"."http://marmalade-repo.org/packages/")
 			 ("melpa"."http://melpa.org/packages/")))
 (package-initialize)
@@ -15,7 +16,7 @@
  'redo+
  'gnuplot
  'magit
- 'ox-twbs)
+ 'ox-reveal)
 
 ;; Require
 (require 'cl-lib)
@@ -23,6 +24,7 @@
 (require 'expand-region)
 (require 'smart-window)
 (require 'redo+) ;; redo+
+(require 'ox-reveal)
 
 ;; Direct loading
 (load-file "~/.emacs.d/configs.el")
