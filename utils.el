@@ -54,8 +54,8 @@
          (list
           project-assets
           :base-directory base-dir
-          :recursive
-          :exclude "public_html"
+          :recursive 't
+          :exclude "public_html\\|org-html-themes\\|[.]git"
           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
           :publishing-directory publishing-dir
           :publishing-function 'org-publish-attachment)
