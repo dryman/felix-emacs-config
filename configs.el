@@ -33,6 +33,7 @@
  'org-babel-load-languages
  '((gnuplot . t)
    (python . t)
+   (dot . t)
    (R . t)
    (perl . t)))
 (setq org-startup-with-inline-images t)
