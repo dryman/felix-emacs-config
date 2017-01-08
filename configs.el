@@ -35,6 +35,8 @@
    (python . t)
    (dot . t)
    (R . t)
+   (C . t)
+   (java . t)
    (perl . t)))
 (setq org-startup-with-inline-images t)
 (setq org-pretty-entities t)
