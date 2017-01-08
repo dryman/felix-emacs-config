@@ -30,3 +30,4 @@
 (load-file "~/.emacs.d/configs.el")
 
 (load-file "~/.emacs.d/keybindings.el")
+(load "~/.emacs.d/PG/generic/proof-site")

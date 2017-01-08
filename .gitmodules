@@ -1,3 +1,6 @@
 [submodule "vendor/emacs-w3m"]
 	path = vendor/emacs-w3m
 	url = git://github.com/doitian/emacs-w3m.git
+[submodule "PG"]
+	path = PG
+	url = https://github.com/ProofGeneral/PG
