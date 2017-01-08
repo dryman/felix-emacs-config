@@ -3,6 +3,7 @@
 (setq inhibit-startup-message t)
 (show-paren-mode t)
 (setq-default indent-tabs-mode nil)
+(whitespace-mode t)
 
 (add-to-list 'auto-mode-alist '("\\.\\(markdown\\|mkdn\\)" . markdown-mode))
 
