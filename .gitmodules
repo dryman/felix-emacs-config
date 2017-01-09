@@ -1,3 +1,6 @@
 [submodule "vendor/emacs-w3m"]
 	path = vendor/emacs-w3m
 	url = git://github.com/doitian/emacs-w3m.git
+[submodule "org-ioslide"]
+	path = org-ioslide
+	url = https://github.com/coldnew/org-ioslide.git
