@@ -3,6 +3,7 @@
 (setq inhibit-startup-message t)
 (show-paren-mode t)
 (setq-default indent-tabs-mode nil)
+(global-linum-mode t)
 
 (add-to-list 'auto-mode-alist '("\\.\\(markdown\\|mkdn\\)" . markdown-mode))
 
@@ -27,6 +28,8 @@
 
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
+
+(projectile-global-mode)
 
 ;; orgmode gnuplot setups
 (org-babel-do-load-languages

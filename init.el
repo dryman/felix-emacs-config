@@ -13,6 +13,7 @@
  'smart-window
  'markdown-mode
  'powerline
+ 'projectile
  'redo+
  'gnuplot
  'magit
