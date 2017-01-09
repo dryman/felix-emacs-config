@@ -4,3 +4,6 @@
 [submodule "org-ioslide"]
 	path = org-ioslide
 	url = https://github.com/coldnew/org-ioslide.git
+[submodule "PG"]
+	path = PG
+	url = https://github.com/ProofGeneral/PG

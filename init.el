@@ -13,6 +13,7 @@
  'smart-window
  'markdown-mode
  'powerline
+ 'projectile
  'redo+
  'gnuplot
  'magit
@@ -36,3 +37,4 @@
              "~/.emacs.d/org-ioslide")
 (require 'ox-ioslide)
 (require 'ox-ioslide-helper)
+(load "~/.emacs.d/PG/generic/proof-site")
