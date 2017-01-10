@@ -2,8 +2,8 @@
 (global-set-key (kbd "s-`") 'other-frame)
 
 ;; remap C-h
-(global-set-key "\C-h" 'backward-delete-char)
-(global-set-key "\C-x?" 'help-command)
+;;(global-set-key "\C-h" 'backward-delete-char)
+;;(global-set-key "\C-x?" 'help-command)
 
 ;; expand region
 (global-set-key (kbd "C-=") 'er/expand-region)
