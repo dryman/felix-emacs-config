@@ -4,6 +4,7 @@
 (show-paren-mode t)
 (setq-default indent-tabs-mode nil)
 (global-linum-mode t)
+(global-whitespace-mode t)
 
 (add-to-list 'auto-mode-alist '("\\.\\(markdown\\|mkdn\\)" . markdown-mode))
 
