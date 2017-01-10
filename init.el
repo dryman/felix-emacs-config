@@ -13,6 +13,9 @@
  'smart-window
  'markdown-mode
  'powerline
+ 'evil
+ 'evil-surround
+ 'evil-numbers
  'projectile
  'redo+
  'gnuplot
@@ -26,7 +29,9 @@
 (require 'smart-window)
 (require 'redo+) ;; redo+
 (require 'ox-reveal)
-;;(require 'ox-ioslide-hel
+(require 'evil)
+(require 'evil-surround)
+(require 'evil-numbers)
 
 ;; Direct loading
 (load-file "~/.emacs.d/configs.el")
