@@ -4,7 +4,7 @@
 (show-paren-mode t)
 (setq-default indent-tabs-mode nil)
 (global-linum-mode t)
-(global-whitespace-mode t)
+;(global-whitespace-mode t)
 (evil-mode 1)
 (global-evil-surround-mode 1)
 

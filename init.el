@@ -10,7 +10,6 @@
 (ensure-package-installed
  'exec-path-from-shell
  'expand-region
- 'smart-window
  'markdown-mode
  'powerline
  'evil
@@ -26,7 +25,6 @@
 (require 'cl-lib)
 (require 'powerline)
 (require 'expand-region)
-(require 'smart-window)
 (require 'redo+) ;; redo+
 (require 'ox-reveal)
 (require 'evil)
