@@ -32,7 +32,9 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
-(projectile-global-mode)
+(if disable-projectile
+    (message "projectile is disabled")
+  (projectile-global-mode))
 
 ;; orgmode gnuplot setups
 (org-babel-do-load-languages
