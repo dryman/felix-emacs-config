@@ -32,7 +32,8 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
-(if disable-projectile
+(if (and (boundp 'disable-projectile)
+     disable-projectile)
     (message "projectile is disabled")
   (projectile-global-mode))
 
