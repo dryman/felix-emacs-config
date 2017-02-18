@@ -3,7 +3,10 @@
 (setq inhibit-startup-message t)
 (show-paren-mode t)
 (setq-default indent-tabs-mode nil)
-(whitespace-mode t)
+(global-linum-mode t)
+;(global-whitespace-mode t)
+(evil-mode 1)
+(global-evil-surround-mode 1)
 
 (add-to-list 'auto-mode-alist '("\\.\\(markdown\\|mkdn\\)" . markdown-mode))
 
@@ -28,6 +31,11 @@
 
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
+
+(if (and (boundp 'disable-projectile)
+     disable-projectile)
+    (message "projectile is disabled")
+  (projectile-global-mode))
 
 ;; orgmode gnuplot setups
 (org-babel-do-load-languages
@@ -59,3 +67,9 @@
         (mathml nil)))
 (setf org-html-mathjax-template
       "<script type=\"text/javascript\" src=\"%PATH\"></script>")
+
+(defadvice evil-inner-word (around underscore-as-word activate)
+  (let ((table (copy-syntax-table (syntax-table))))
+    (modify-syntax-entry ?_ "w" table)
+    (with-syntax-table table
+      ad-do-it)))

@@ -1,9 +1,11 @@
 ;; ;; command-backquote is still jump to other frame
 (global-set-key (kbd "s-`") 'other-frame)
 
+(global-set-key (kbd "C-c +") 'evil-numbers/inc-at-pt)
+(global-set-key (kbd "C-c -") 'evil-numbers/dec-at-pt)
 ;; remap C-h
-(global-set-key "\C-h" 'backward-delete-char)
-(global-set-key "\C-x?" 'help-command)
+;;(global-set-key "\C-h" 'backward-delete-char)
+;;(global-set-key "\C-x?" 'help-command)
 
 ;; expand region
 (global-set-key (kbd "C-=") 'er/expand-region)

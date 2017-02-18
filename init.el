@@ -10,9 +10,12 @@
 (ensure-package-installed
  'exec-path-from-shell
  'expand-region
- 'smart-window
  'markdown-mode
  'powerline
+ 'evil
+ 'evil-surround
+ 'evil-numbers
+ 'projectile
  'redo+
  'gnuplot
  'magit
@@ -22,12 +25,19 @@
 (require 'cl-lib)
 (require 'powerline)
 (require 'expand-region)
-(require 'smart-window)
 (require 'redo+) ;; redo+
 (require 'ox-reveal)
+(require 'evil)
+(require 'evil-surround)
+(require 'evil-numbers)
 
 ;; Direct loading
 (load-file "~/.emacs.d/configs.el")
-
 (load-file "~/.emacs.d/keybindings.el")
+
+;; other third-party
+(add-to-list 'load-path
+             "~/.emacs.d/org-ioslide")
+(require 'ox-ioslide)
+(require 'ox-ioslide-helper)
 (load "~/.emacs.d/PG/generic/proof-site")
