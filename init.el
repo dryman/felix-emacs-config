@@ -38,6 +38,6 @@
 ;; other third-party
 (add-to-list 'load-path
              "~/.emacs.d/org-ioslide")
-(require 'ox-ioslide)
-(require 'ox-ioslide-helper)
+;; (require 'ox-ioslide)
+;; (require 'ox-ioslide-helper)
 (load "~/.emacs.d/PG/generic/proof-site")
