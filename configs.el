@@ -4,7 +4,7 @@
 (show-paren-mode t)
 (setq-default indent-tabs-mode nil)
 (global-linum-mode t)
-;(global-whitespace-mode t)
+(global-whitespace-mode t)
 (evil-mode 1)
 (global-evil-surround-mode 1)
 
@@ -35,7 +35,9 @@
 (if (and (boundp 'disable-projectile)
      disable-projectile)
     (message "projectile is disabled")
-  (projectile-global-mode))
+  (progn (projectile-global-mode)
+         (require 'helm-projectile)
+         (helm-projectile-on)))
 
 ;; orgmode gnuplot setups
 (org-babel-do-load-languages
@@ -73,3 +75,5 @@
     (modify-syntax-entry ?_ "w" table)
     (with-syntax-table table
       ad-do-it)))
+
+(setq projectile-project-compilation-cmd "make")

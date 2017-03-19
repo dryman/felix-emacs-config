@@ -15,7 +15,7 @@
  'evil
  'evil-surround
  'evil-numbers
- 'projectile
+ 'helm-projectile
  'redo+
  'gnuplot
  'magit
