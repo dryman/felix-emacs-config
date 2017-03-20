@@ -32,12 +32,23 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
+(defun my-projectile-test-suffix (project-type)
+  "Find default test files suffix based on PROJECT-TYPE."
+  (cond
+   ((member project-type '(rails-rspec ruby-rspec)) "_spec")
+   ((member project-type '(rails-test ruby-test lein-test go make)) "_test")
+   ((member project-type '(scons)) "test")
+   ((member project-type '(maven symfony)) "Test")
+   ((member project-type '(gradle grails)) "Spec")))
+
 (if (and (boundp 'disable-projectile)
      disable-projectile)
     (message "projectile is disabled")
   (progn (projectile-global-mode)
          (require 'helm-projectile)
-         (helm-projectile-on)))
+         (helm-projectile-on)
+         (setq projectile-test-suffix-function
+               'my-projectile-test-suffix)))
 
 ;; orgmode gnuplot setups
 (org-babel-do-load-languages
